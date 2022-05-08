@@ -669,6 +669,7 @@ body{
 
 .container.all{
     display: flex;
+    align-items: baseline;
 }
 
 .footer-about{
@@ -724,13 +725,6 @@ body{
     cursor: pointer;
 }
 
-.footer-join{
-    width: 206px;
-    height: 80px;
-    margin-top: 15px;
-    margin-right: 93px;
-}
-
 .footer-join-title{
     margin-bottom: 20px;
 
@@ -770,7 +764,7 @@ body{
 }
 
 .footer-mailing{
-    margin-top: 15px;
+    margin-left: auto;
 }
 
 .mailing-title{
@@ -802,7 +796,14 @@ body{
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.15));
     border-radius: 4px;
 
+    transition: border-color 250ms var(--timing--function);
+
     color: var(--main-title-color);
+}
+
+.mailing-input:hover,
+.mailing-input:focus{
+    border-color: var(--accent-color);
 }
 
 .mailing-btn{
@@ -858,7 +859,10 @@ body{
 
     border-radius: 4px;
     background-color: var(--third-background-color);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    box-shadow: 
+        0px 1px 3px rgba(0, 0, 0, 0.12),
+        0px 1px 1px rgba(0, 0, 0, 0.14),
+        0px 2px 1px rgba(0, 0, 0, 0.2);
 }
 
 .modal-close-btn{
@@ -941,10 +945,12 @@ body{
     transition: fill 250ms var(--timing--function);
 }
 
+.modal-input:hover,
 .modal-input:focus{
     border-color: var(--accent-color);
 }
 
+.modal-input:hover + .modal-icon,
 .modal-input:focus + .modal-icon{
     fill: var(--accent-color);
 }
@@ -966,6 +972,7 @@ body{
     transition: border-color 250ms var(--timing--function);
 }
 
+.modal-text:hover,
 .modal-text:focus{
     border-color: var(--accent-color);
 }
@@ -978,10 +985,14 @@ body{
     color: rgba(117, 117, 117, 0.5);
 }
 
-.modal-lable-check{
+.modal-field.check{
     margin-bottom: 30px;
+}
+
+.modal-lable-check{
     display: flex;
     align-items: center;
+    justify-content: center;
 
     font-weight: 400;
     font-size: 14px;
@@ -1011,6 +1022,14 @@ body{
     border 250ms var(--timing--function);
 }
 
+.modal-lable-check:hover span{
+    border-color: var(--accent-color);
+}
+
+.input-check:focus + .modal-lable-check span{
+    border-color: var(--accent-color);
+}
+
 .input-check:checked + .modal-lable-check span{
     background-color: var(--accent-color);
     border: none;
@@ -1031,9 +1050,11 @@ body{
     padding: 10px 55px;
 
     display: block;
-    margin: 0 auto; 
+    margin: 0 auto;
 
-    background: var(--accent-color);
+    transition: background-color 250ms var(--timing--function);
+
+    background-color: var(--accent-color);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
 
@@ -1042,4 +1063,9 @@ body{
     line-height: 1.88;
     letter-spacing: 0.06em;
     color: var(--main-title-color);
-    }
+}
+
+.modal-btn:hover,
+.modal-btn:focus{
+    background-color:#188CE8;
+}
